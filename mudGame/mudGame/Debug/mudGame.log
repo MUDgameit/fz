@@ -1,0 +1,13 @@
+﻿  task.cpp
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\operating.h(15): error C2061: 语法错误: 标识符“task”
+  WuDang.cpp
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\operating.h(15): error C2061: 语法错误: 标识符“task”
+  SkyMountain.cpp
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\operating.h(15): error C2061: 语法错误: 标识符“task”
+  GreenCityMountain.cpp
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\operating.h(15): error C2061: 语法错误: 标识符“task”
+  DemonShrine.cpp
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\operating.h(15): error C2061: 语法错误: 标识符“task”
+  DemonMountain.cpp
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\operating.h(15): error C2061: 语法错误: 标识符“task”
+  正在生成代码...
