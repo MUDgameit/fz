@@ -4,8 +4,12 @@
 #include<stdlib.h>
 using namespace std;
 layer::layer(string layername):layername(layername) {
-	num = -1;
+	num = 0;
+}
 
+int layer::returnNum()
+{
+	return num;
 }
 
 void layer::showlayer() {
@@ -49,7 +53,7 @@ string layer::gettreasure(){
 
 void layer::movestep(int i)
 {
-	num = i;
+	num = i - 1;
 }
 
 

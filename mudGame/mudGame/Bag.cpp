@@ -12,6 +12,9 @@ void Bag::ShowWeapon( ) {
 	
 	if (bagContent.size() == 0)
 	{
+		HANDLE consolehwnd;
+		consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+		SetConsoleTextAttribute(consolehwnd, 12);
 		cout << "背包里没有物品！" << endl;
 		system("pause");
 		system("cls");
@@ -28,12 +31,16 @@ void Bag::ShowWeapon( ) {
 			for (i = 0; i < 5; i++)
 			{
 				cout << ++number << "：" << *it << "\t";
+				DetialNumber++;
 			}
 			cout << endl;
 		}
 		cout << endl;
 		int choice = 3;
 		int choice1 = 1;
+		HANDLE consolehwnd;
+		consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+		SetConsoleTextAttribute(consolehwnd, 14);
 		cout << "1.查看装备详情（输入对应序号）\t0.返回" << endl;
 		while (choice1)
 		{
@@ -57,6 +64,9 @@ void Bag::ShowWeapon( ) {
 								{
 									if (choice > bagContent.size())
 									{
+										HANDLE consolehwnd;
+										consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+										SetConsoleTextAttribute(consolehwnd, 12);
 										cout << "不存在该装备！请重新输入：" << endl;
 									}
 									else
@@ -67,6 +77,9 @@ void Bag::ShowWeapon( ) {
 							}
 							else
 							{
+								HANDLE consolehwnd;
+								consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+								SetConsoleTextAttribute(consolehwnd, 12);
 								throw Error("输入不符合规范");
 							}
 						}
@@ -78,6 +91,9 @@ void Bag::ShowWeapon( ) {
 				}
 				else
 				{
+					HANDLE consolehwnd;
+					consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+					SetConsoleTextAttribute(consolehwnd, 12);
 					throw Error("输入不符合规范");
 				}
 				
@@ -88,7 +104,7 @@ void Bag::ShowWeapon( ) {
 				cin.clear();
 				// numeric_limits<streamsize>::max() 返回输入缓冲的大小。
 				// ignore 函数在此将把输入流中的数据清空。
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cin.ignore((numeric_limits<streamsize>::max)(), '\n');
 				cout << e.what() << endl;
 			/*	system("pause");
 				system("cls");
@@ -102,5 +118,8 @@ void Bag::ShowWeapon( ) {
 	}
 }
 Bag::Bag() {
-
+	DetialNumber = 0;
+}
+int Bag::getNum() {
+	return DetialNumber;
 }

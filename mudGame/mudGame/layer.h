@@ -1,9 +1,11 @@
 #pragma once
 #include<string>
+#include "operating.h"
 using namespace std;
 class layer {
 public:
 	layer(string);
+	int returnNum();
 	void showlayer();
 	string getlayername();
 	void changelayername(string name);

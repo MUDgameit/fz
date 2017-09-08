@@ -13,9 +13,9 @@ int operating::showStartMenu()
 		{
 			switch (choice)
 			{
-			case 1:return 1;
-			case 2:return 2;
-			case 3:return 0;
+			case 1:choice = 1; break;
+			case 2:choice = 2; break;
+			case 3:choice = 0; break;
 			default:throw Error("输入不符合规范，请输入数字1-3");
 			}
 		}
@@ -30,13 +30,14 @@ int operating::showStartMenu()
 		cin.clear();
 		// numeric_limits<streamsize>::max() 返回输入缓冲的大小。
 		// ignore 函数在此将把输入流中的数据清空。
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin.ignore((numeric_limits<streamsize>::max)(), '\n');
 		cout << e.what() << endl;
 		system("pause");
+
 		system("cls");
 		this->showStartMenu();
 	}
-
+	return choice;
 }
 
 string operating::getGamerName()
@@ -64,7 +65,7 @@ string operating::getGamerName()
 		cin.clear();
 		// numeric_limits<streamsize>::max() 返回输入缓冲的大小。
 		// ignore 函数在此将把输入流中的数据清空。
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin.ignore((numeric_limits<streamsize>::max)(), '\n');
 		cout << e.what() << endl;
 		system("pause");
 
@@ -109,7 +110,7 @@ int operating::showMainMenu(Character & gamer)
 		cin.clear();
 		// numeric_limits<streamsize>::max() 返回输入缓冲的大小。
 		// ignore 函数在此将把输入流中的数据清空。
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin.ignore((numeric_limits<streamsize>::max)(), '\n');
 		cout << e.what() << endl;
 		system("pause");
 		system("cls");
@@ -177,9 +178,94 @@ int operating::showMap(task &myTask)
 		cin.clear();
 		// numeric_limits<streamsize>::max() 返回输入缓冲的大小。
 		// ignore 函数在此将把输入流中的数据清空。
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin.ignore((numeric_limits<streamsize>::max)(), '\n');
 		cout << e.what() << endl;
 	}
 	
+	return 0;
+}
+
+int operating::showStory(Character &amy)
+{
+	cout << "这是一个寒冷的冬天。\n";
+	cin.get();
+	cout << amy.getName() <<
+		"刚刚过完了他的16岁生日。从小父母双亡的他是在一个大雪纷飞的冬日被师父报上山来抚养长大的。师父是雪山派的掌门，这些年对他也是悉心教导，在他看来，师父就像父亲一样。和他平日一同习武的还有他的小师妹（张清娴），两人感情也是相当的亲厚。\n一个看似寻常的日子，A刚脱下外套准备就寝的时候，一个黑影突然出现在窗外——\n";
+	cin.get();
+	cout << amy.getName() << "：谁？！\n";
+	cin.get();
+	cout <<
+		"黑影：别怕，我是你父母的故人，已经寻了你16年了，昨日才从雪山派中寻到了你的消息。\n";
+	cin.get();
+	cout << amy.getName() <<
+		"：口说无凭，你休得乱讲！我自有记忆就未见过父母，是师父将我从小教养，何来父母故人之说！\n";
+	cin.get();
+	cout <<
+		"黑影：你且说，你心口是否有一红色心形胎记？\n";
+	cin.get();
+	cout << amy.getName() <<
+		"：（这么私密的事情怎会有外人得知？或许我真同他有一分渊源…）\n";
+	cin.get();
+	cout <<
+		"黑影：罢了，我今日也不在此久留，待有时间再来望你。（说罢，竟是用轻功离开）。\n";
+	cin.get();
+	cout << amy.getName() <<
+		"：也罢，过几日待到我与师父都出关后再问询师父吧。\n";
+	cin.get();
+	cout <<
+		"十日后......\n" << amy.getName() << "刚出关，正要去寻师父，却听到了师父被人杀害的消息——\n";
+	cin.get();
+	cout << amy.getName() <<
+		"：这....这怎可能....师父...师父竟......（大哭）\n";
+	cin.get();
+	cout <<
+		"待到心情平复些许，" << amy.getName() << "听闻师妹整理师父遗物的时候发现了一枚黄色杏果挂坠，心下有疑，便唤人取来察看。\n";
+	cin.get();
+	cout << amy.getName() <<
+		"：（师父曾讲过，多年前天山老怪行走江湖时，腰间所挂杏果玉坠即为他的身份标识，莫不是...）\n";
+	cin.get();
+	cout <<
+		"待到看见该玉坠，" << amy.getName() << "当即确定天山老怪同师父的死脱不得关系。\n";
+	cin.get();
+	cout << amy.getName() <<
+		"：我便要下山去寻那天山老怪，为师父报仇！\n";
+	cin.get();
+	cout <<
+		"师妹：我同你一起去吧，两人对上那老怪许有更大的把握。\n";
+	cin.get();
+	cout <<
+		"***选择\n" <<
+		"1：好，那我们便一同去取那仇人性命，告慰师父在天之灵！\n" <<
+		"2：师父刚去世，门派事务还需人打理，你且等着，我必取下那仇人首级！\n";
+	cout << "输入你的选择：";
+	int choice;
+	while (true)
+	{
+		try 
+		{
+			if (cin >> choice)
+			{
+				switch (choice)
+				{
+				case 1:return 1;
+				case 2:return 2;
+				default:throw Error("输入不符合规范，请输入数字1-2");
+				}
+			}
+			else
+			{
+				throw Error("输入不符合规范，请输入数字1-2");
+			}
+		}
+		catch (Error &e) {
+			// 读到非法字符后，输入流将处于出错状态，
+			// 为了继续获取输入，首先要调用 clear 函数
+			cin.clear();
+			// numeric_limits<streamsize>::max() 返回输入缓冲的大小。
+			// ignore 函数在此将把输入流中的数据清空。
+			cin.ignore((numeric_limits<streamsize>::max)(), '\n');
+			cout << e.what() << endl;
+		}
+	}
 	return 0;
 }

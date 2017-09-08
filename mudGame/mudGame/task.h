@@ -6,6 +6,7 @@
 #include"character.h"
 #include"Error.h"
 #include<stdlib.h>
+#include<limits>
 using namespace std;
 class task {
 public:
@@ -13,6 +14,8 @@ public:
 	void showTask();
 	bool ifTaskFinish(int);
 	void finishTask(int);
+	void setfinishTask(int);
+	void setNowTask(int);
 	void printFinishedTask();
 	void printNowTask();
 	int getNowTask();

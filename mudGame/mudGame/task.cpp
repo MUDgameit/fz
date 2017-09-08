@@ -24,6 +24,9 @@ task::task()
 
 void task::showTask()
 {
+	HANDLE consolehwnd;
+	consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(consolehwnd, 14);
 	cout << "1.当前任务2.已完成任务3.返回" << endl;
 	
 	int choice = 1;
@@ -52,7 +55,7 @@ void task::showTask()
 			cin.clear();
 			// numeric_limits<streamsize>::max() 返回输入缓冲的大小。
 			// ignore 函数在此将把输入流中的数据清空。
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cin.ignore((numeric_limits<streamsize>::max)(), '\n');
 			cout << e.what() << endl;
 			
 		}
@@ -77,10 +80,12 @@ void task::finishTask(int choice)
 	if (nowTask == 0 || nowTask == 10 || nowTask == 14)
 	{
 		ifFinishTask[nowTask] = choice;
+		nowTask++;
 	}
 	else
 	{
 		ifFinishTask[nowTask] = 1;
+		nowTask++;
 	}
 }
 
@@ -107,7 +112,14 @@ void task::printNowTask()
 {
 	cout << taskContent[nowTask] << endl;
 }
-
+void task::setNowTask(int i)
+{
+	nowTask = i;
+}
+void task::setfinishTask(int i)
+{
+	ifFinishTask[i] = 1;
+}
 int task::getNowTask()
 {
 	return nowTask;

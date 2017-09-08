@@ -1,9 +1,11 @@
 #pragma once
 #include<string>
+#include<cstring>
+#include<cstdlib>
 using namespace std;
 class Monster {
 public:
-	Monster(string);
+	Monster(string,string);
 	int fighting();
 	int defense(int hurt, int probability);
 	string fall();
