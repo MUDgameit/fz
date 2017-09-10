@@ -12,4 +12,5 @@ public:
 	virtual double getAttackSpeed() = 0;
 	virtual double getLife() = 0;
 	virtual void showInformation() = 0;
+	
 };

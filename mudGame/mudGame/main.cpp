@@ -38,13 +38,13 @@ int main()
 			
 
 			//生成背包
-			Bag myBag = Bag();
+			Bag myBag;
 			//生成技能
-			Skill mySkill = Skill();
+			Skill mySkill;
 			//生成任务
-			task myTask = task();
+			task myTask;
 			//故事
-			myTask.finishTask(operating_user.showStory(amy));
+			myTask.finishNowTask(operating_user.showStory(amy));
 			system("cls");
 			int mainMenuChoice = 0;
 			while (mainMenuChoice = operating_user.showMainMenu(amy))

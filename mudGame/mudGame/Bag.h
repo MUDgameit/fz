@@ -10,13 +10,15 @@
 #include<limits>
 using namespace std;
 class Bag {
-private:
-	vector<Article*> bagContent;
-	int DetialNumber;
 public:
+	Bag();
 	void DeleteWeapon(int i);
 	void AddWeapon(string name);
 	void ShowWeapon();
 	int getNum();
-	Bag();
+	void equip();
+private:
+	vector<Article*> bagContent;
+	int DetialNumber;
+
 };

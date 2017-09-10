@@ -57,12 +57,12 @@ void SkyMountain::operate(Character * gamer)
 				{
 				case 1:
 				{
-					if (taskState > 0)
+					if (taskState==1)
 					{
 						cout << smalllayerintroduction[0] << endl;
 						Monster monster = Monster("ÌÕÔÆ", "ÆÕÍ¨¹¥»÷");
 						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
+						fighting fight = fighting(&monster, gamer, point,1);
 				
 						break;
 					}
@@ -70,18 +70,18 @@ void SkyMountain::operate(Character * gamer)
 					{
 						Monster monster = Monster("ÌÕÔÆ", "ÆÕÍ¨¹¥»÷");
 						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
+						fighting fight = fighting(&monster, gamer, point,1);
 						break;
 					}
 				}
 				case 2:
 				{
-					if (taskState > 1)
+					if (taskState ==2)
 					{
 						cout << smalllayerintroduction[1] << endl;
 						Monster monster = Monster("ËïÔóÒí", "ÆÕÍ¨¹¥»÷");
 						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
+						fighting fight = fighting(&monster, gamer, point,2);
 					
 						break;
 					}
@@ -89,18 +89,18 @@ void SkyMountain::operate(Character * gamer)
 					{
 						Monster monster = Monster("ËïÔóÒí", "ÆÕÍ¨¹¥»÷");
 						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
+						fighting fight = fighting(&monster, gamer, point,2);
 						break;
 					}
 				}
 				case 3:
 				{
-					if (taskState > 2)
+					if (taskState==3)
 					{
 						cout << smalllayerintroduction[2] << endl;
 						Monster monster = Monster("Á§Òô", "ÆÕÍ¨¹¥»÷");
 						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
+						fighting fight = fighting(&monster, gamer, point,3);
 		
 						break;
 					}
@@ -108,18 +108,18 @@ void SkyMountain::operate(Character * gamer)
 					{
 						Monster monster = Monster("Á§Òô", "ÆÕÍ¨¹¥»÷");
 						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
+						fighting fight = fighting(&monster, gamer, point,3);
 						break;
 					}
 				}
 				case 4:
 				{
-					if (taskState > 3)
+					if (taskState ==4)
 					{
 						cout << smalllayerintroduction[3] << endl;
 						Monster monster = Monster("ÌìÉ½ÀÏ¹Ö", "ÆÕÍ¨¹¥»÷");
 						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
+						fighting fight = fighting(&monster, gamer, point,4);
 			
 						break;
 					}
@@ -127,7 +127,7 @@ void SkyMountain::operate(Character * gamer)
 					{
 						Monster monster = Monster("ÌìÉ½ÀÏ¹Ö", "ÆÕÍ¨¹¥»÷");
 						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
+						fighting fight = fighting(&monster, gamer, point,4);
 						break;
 					}
 				}

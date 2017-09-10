@@ -3,6 +3,7 @@
 
 #include <string>
 #include "Article.h"
+#include "character.h"
 using namespace std;
 
 class Weapon : public Article{

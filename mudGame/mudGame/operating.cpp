@@ -196,6 +196,7 @@ int operating::showStory(Character &amy)
 	cin.get();
 	cout <<
 		"黑影：别怕，我是你父母的故人，已经寻了你16年了，昨日才从雪山派中寻到了你的消息。\n";
+
 	cin.get();
 	cout << amy.getName() <<
 		"：口说无凭，你休得乱讲！我自有记忆就未见过父母，是师父将我从小教养，何来父母故人之说！\n";
@@ -212,6 +213,7 @@ int operating::showStory(Character &amy)
 	cout << amy.getName() <<
 		"：也罢，过几日待到我与师父都出关后再问询师父吧。\n";
 	cin.get();
+
 	cout <<
 		"十日后......\n" << amy.getName() << "刚出关，正要去寻师父，却听到了师父被人杀害的消息——\n";
 	cin.get();

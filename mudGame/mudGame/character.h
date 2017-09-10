@@ -5,7 +5,7 @@
 #include <string>
 #include "equipment.h"
 #include "weapon.h"
-
+class Weapon;
 using namespace std;
 
 class Character {

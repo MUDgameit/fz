@@ -1,5 +1,6 @@
 #include"GreenCityMountain.h"
 GreenCityMountain::GreenCityMountain(string layername, task* point,Character *gamer) :layer(layername), point(point), ifFinishTask(false) {
+	system("cls");
 	changelayerintroduction("");
 	changetreasure("武器");
 
@@ -16,6 +17,7 @@ GreenCityMountain::GreenCityMountain(string layername, task* point,Character *ga
 	smalllayer[1] = "天山山麓";
 	smalllayer[2] = "天山天池";
 	smalllayer[3] = "";*/
+	operate(gamer);
 }
 GreenCityMountain::~GreenCityMountain() {
 
@@ -37,13 +39,13 @@ void GreenCityMountain::operate(Character *gamer)
 {
 	while (true)
 	{
+		system("cls");
 		int taskState = point->getNowTask();
 		switch (taskState)
 		{
-		case 1:cout << "1.天山山脚\t0.返回" << endl; break;
-		case 2:cout << "1.天山山脚\t2.天山山麓\t0.返回" << endl; break;
-		case 3:cout << "1.天山山脚\t2.天山山麓\t3.天山天池\t0.返回" << endl; break;
-		case 4:cout << "1.天山山脚\t2.天山山麓\t3.天山天池\t4.天山山顶\t0.返回" << endl;
+		case 15:cout << "1.龙门镖局\t0.返回" << endl; break;
+		case 16:cout << "1.龙门镖局\t2.败犬派\t0.返回" << endl; break;
+		default:cout << "1.龙门镖局\t2.败犬派\t3.断袖门\t0.返回" << endl; break;
 		}
 		cout << "请输入你选择的地点：";
 		int choice = 1;
@@ -54,80 +56,63 @@ void GreenCityMountain::operate(Character *gamer)
 				{
 				case 1:
 				{
-					if (taskState > 0)
+					if (taskState == 15)
 					{
 						cout << smalllayerintroduction[0] << endl;
-						Monster monster = Monster("陶云", "普通攻击");
+						Monster monster = Monster("龙门镖局", "普通攻击");
 						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
+						fighting fight = fighting(&monster, gamer, point,15);
 
 						break;
 					}
 					else
 					{
-						Monster monster = Monster("陶云", "普通攻击");
+						Monster monster = Monster("龙门镖局", "普通攻击");
 						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
+						fighting fight = fighting(&monster, gamer, point,15);
 						break;
 					}
 				}
 				case 2:
 				{
-					if (taskState > 1)
+					if (taskState ==16)
 					{
 						cout << smalllayerintroduction[1] << endl;
-						Monster monster = Monster("孙泽翼", "普通攻击");
+						Monster monster = Monster("败犬派", "普通攻击");
 						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
+						fighting fight = fighting(&monster, gamer, point,16);
 
 						break;
 					}
 					else
 					{
-						Monster monster = Monster("孙泽翼", "普通攻击");
+						Monster monster = Monster("败犬派", "普通攻击");
 						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
+						fighting fight = fighting(&monster, gamer, point,16);
 						break;
 					}
 				}
 				case 3:
 				{
-					if (taskState > 2)
+					if (taskState ==17)
 					{
 						cout << smalllayerintroduction[2] << endl;
-						Monster monster = Monster("璃音", "普通攻击");
+						Monster monster = Monster("断袖门", "普通攻击");
 						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
+						fighting fight = fighting(&monster, gamer, point,17);
 
 						break;
 					}
 					else
 					{
-						Monster monster = Monster("璃音", "普通攻击");
+						Monster monster = Monster("断袖门", "普通攻击");
 						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
+						fighting fight = fighting(&monster, gamer, point,17);
 						break;
 					}
 				}
-				case 4:
-				{
-					if (taskState > 3)
-					{
-						cout << smalllayerintroduction[3] << endl;
-						Monster monster = Monster("天山老怪", "普通攻击");
-						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
-
-						break;
-					}
-					else
-					{
-						Monster monster = Monster("天山老怪", "普通攻击");
-						system("pause");
-						fighting fight = fighting(&monster, gamer, point);
-						break;
-					}
-				}
+			
+				
 				case 0:
 				{
 					break;

@@ -1,13 +1,13 @@
 #include"fighting.h"
 #include<time.h>
 #include<stdlib.h>
-fighting::fighting(Monster * monster, Character * character, task * taskPoint):monster(monster),character(character)
+fighting::fighting(Monster * monster, Character * character, task * taskPoint, int taskNum):monster(monster),character(character)
 {
 	skill = new Skill();
 	mylife = character->getLife();
 	enemyslife = monster->returnLife();
 	blooding = false;
-	this->fight(taskPoint);
+	this->fight(taskPoint,taskNum);
 }
 
 bool fighting::judge()//判断一速的函数，先判断人物武器攻击距离如果是远程人物先攻击，否则再判断人物和怪物的相对速度，谁快谁先攻击
@@ -28,7 +28,7 @@ int fighting::firstRound()
 		return 1;//奇数表示怪物回合
 }
 
-void fighting::fight(task* point)
+void fighting::fight(task* point, int task)
 {
 	int i;
 	round = firstRound();//判断第一回合是谁的
@@ -82,8 +82,7 @@ void fighting::fight(task* point)
 	} while ((mylife > 0) && enemyslife >0);//人物和怪物的血量都大于0的情况下，一直战斗
 	if (mylife > 0) {//如果战斗结束后人物血量大于0，就是人物胜利
 		cout << "战斗胜利！" << endl;
-		int m = point->getNowTask();
-		point->finishTask(point->getNowTask());
+		point->finishTask(task);
 		if (monster->fall() != "")//怪物是否掉落物品
 		{
 			cout << "恭喜你获得了" << monster->fall() << endl;//经验升级我没写

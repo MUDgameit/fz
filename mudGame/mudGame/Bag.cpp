@@ -1,5 +1,8 @@
 #include"Bag.h"
 #include"Article.h"
+void Bag::equip() {
+
+}
 void Bag::AddWeapon(string name) {
 	bagContent.push_back(new Weapon(name)) ;
 }

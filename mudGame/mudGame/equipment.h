@@ -15,6 +15,7 @@ public:
     double getLife();
     void setEquipment(bool status);
 	void showInformation();
+
 private:
     string name; // 名称
     int category; // 护肩为1，胸甲为2，护腿为3
