@@ -8,17 +8,16 @@
 #include"character.h"
 #include<vector>
 #include<limits>
+class Character;
 using namespace std;
 class Bag {
-public:
-	Bag();
-	void DeleteWeapon(int i);
-	void AddWeapon(string name);
-	void ShowWeapon();
-	int getNum();
-	void equip();
 private:
 	vector<Article*> bagContent;
 	int DetialNumber;
-
+public:
+	void DeleteWeapon(int i);
+	void AddWeapon(string name);
+	void ShowWeapon(Character&);
+	int getNum();
+	Bag();
 };

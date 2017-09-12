@@ -1,31 +1,17 @@
 ﻿  main.cpp
-  Weapon.cpp
-c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\weapon.cpp(49): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\weapon.cpp(31): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 参见“strcpy”的声明
-c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\weapon.cpp(33): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 参见“strtok”的声明
-c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\weapon.cpp(36): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 参见“strtok”的声明
-  Bag.cpp
-c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\bag.cpp(68): warning C4018: “>”: 有符号/无符号不匹配
-  正在生成代码...
-  正在编译...
-  task.cpp
-  operating.cpp
-  layer.cpp
-  fighting.cpp
-c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\fighting.cpp(7): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\fighting.cpp(37): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
-c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\fighting.cpp(45): warning C4244: “-=”: 从“double”转换到“int”，可能丢失数据
-c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\fighting.cpp(70): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-  character.cpp
-  WuDang.cpp
-  SkyMountain.cpp
-  GreenCityMountain.cpp
-  DemonShrine.cpp
-  DemonMountain.cpp
-  正在生成代码...
-c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\operating.cpp(76): warning C4715: “operating::getGamerName”: 不是所有的控件路径都返回值
-  mudGame.vcxproj -> C:\Users\dell\documents\visual studio 2015\Projects\mudGame\Debug\mudGame.exe
-  mudGame.vcxproj -> C:\Users\dell\documents\visual studio 2015\Projects\mudGame\Debug\mudGame.pdb (Full PDB)
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\main.cpp(68): error C3867: “std::basic_ifstream<char,std::char_traits<char>>::close”: 非标准语法；请使用 "&" 来创建指向成员的指针
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\main.cpp(71): error C2371: “i”: 重定义；不同的基类型
+  c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\main.cpp(63): note: 参见“i”的声明
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\main.cpp(76): error C2088: “>>”: 对于 class 非法
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\main.cpp(78): error C2088: “>>”: 对于 class 非法
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\main.cpp(82): error C2088: “>>”: 对于 class 非法
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\main.cpp(84): error C2088: “>>”: 对于 class 非法
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\main.cpp(86): error C2088: “>>”: 对于 class 非法
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\main.cpp(88): error C2088: “>>”: 对于 class 非法
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\main.cpp(90): error C2088: “>>”: 对于 class 非法
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\main.cpp(94): error C2088: “>>”: 对于 class 非法
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\main.cpp(96): error C2088: “>>”: 对于 class 非法
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\main.cpp(98): error C2088: “>>”: 对于 class 非法
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\main.cpp(102): error C2088: “>>”: 对于 class 非法
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\main.cpp(126): error C2086: “int i”: 重定义
+  c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\main.cpp(63): note: 参见“i”的声明
