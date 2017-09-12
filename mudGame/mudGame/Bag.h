@@ -13,11 +13,12 @@ using namespace std;
 class Bag {
 private:
 	vector<Article*> bagContent;
-	int DetialNumber;
 public:
 	void DeleteWeapon(int i);
 	void AddWeapon(string name);
 	void ShowWeapon(Character&);
+	string nameOfEquipment(int i);
+	void equipEquipment(string name, Character& gamer);
 	int getNum();
 	Bag();
 };

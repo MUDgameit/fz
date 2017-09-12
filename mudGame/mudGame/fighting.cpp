@@ -35,8 +35,7 @@ void fighting::fight(task* point, int task)
 	do {
 		if ( round % 2 != 0) {//怪物回合，回合数是奇数或者开局是1就是怪物的回合
 			srand(time(NULL));
-			i = rand() % (10 / ((int)(character->getAvoidRate() * 10))) + 1;
-			if (1 == i)//判断是否躲避成功，用人物的躲避率，随机数种子是时间
+			if (rand() % 10 + 1>((int)(character->getHitRate() * 10)))//判断是否躲避成功，用人物的躲避率，随机数种子是时间
 				cout << "你躲避成功" << endl;
 			else {//没有躲避成功
 				cout << "你被" << monster->returnName() <<//怪物的名字
@@ -51,33 +50,68 @@ void fighting::fight(task* point, int task)
 			cout << "请选择技能" << endl;
 			this->skill->showSkill();//显示人物已经学会的技能
 			int select=0;//初始化变量
-			cin >> select;//输入选择的技能序号
-			force = this->skill->UseSkill(select, force);//剩余法力的计算，显示使用该技能之后剩余法力
-			int hurt1 = this->skill->getSkilldamage(select);//伤害的第一部分，是人物使用技能所造成的伤害
-			int hurt2 = 0;
+			try {
+				if (cin >> select)//输入选择的技能序号
+				{
+					switch (select)
+					{
+					case 0:break;
+					case 1:break;
+					case 2:break;
+					case 3:break;
+					case 4:break;
+					case 5:break;
+					case 6:break;
+					case 7:break;
+					case 8:break;
+					case 9:break;
+					case 10:break;
+					default:throw Error("输入不符合规范，请输入数字1-10");
+					}
+					srand((unsigned int)time(NULL));
+					//i = rand() % (10 / ((int)(character->getHitRate() * 10))) + 1;
+					if (!(this->skill->iflearnt(select)))
+						round--;
+					else
+					{
+						force = this->skill->UseSkill(select, force);//剩余法力的计算，显示使用该技能之后剩余法力
+						int hurt1 = this->skill->getSkilldamage(select);//伤害的第一部分，是人物使用技能所造成的伤害
+						int hurt2 = 0;
+						if (rand() % 10+1>((int)(character->getHitRate() * 10)))//判断是否命中，没有命中的话直接回合数加一
+						{
+							cout << "你的攻击没有命中！" << endl;
+						}
+						else
+						{
+							if (1 == rand() % (int)(this->character->getHitRate() * 100))//判断暴击率
+								hurt1 = hurt1 * 2;//如果暴击，第一部分攻击乘以二
+												  //力量给攻击加成，是伤害的第二部分
+							hurt2 = character->getStrength();
+							enemyslife -= hurt1 + hurt2;//怪物减血
+							cout << "你的攻击造成了" << hurt1 + hurt2 << "点伤害！" << endl;
 
-			srand((unsigned int)time(NULL));
-			i = rand() % (10 / ((int)(character->getAvoidRate() * 10))) + 1;
-			if (1 == i)//判断是否命中，没有命中的话直接回合数加一
-			{
-				cout << "你的攻击没有命中！" << endl;
+							if ((int)this->character->getNegative_state_rate() == 1)//判断是否有冰冻眩晕状态，如果有的话回合数加一，即跳过怪物的那个回合
+								round++;
+							if (blooding)
+								enemyslife -= 10;//判断是否有持续出血状态，持续出血每一回合怪物血量减10
+						}
+					}
+					round++;//回合数加一
+				}
 			}
-			else
-			{
-				if (1 == rand() % (int)(this->character->getHitRate() * 100))//判断暴击率
-					hurt1 = hurt1 * 2;//如果暴击，第一部分攻击乘以二
-				//力量给攻击加成，是伤害的第二部分
-				hurt2 = character->getStrength();
-			
-				enemyslife -= hurt1 + hurt2;//怪物减血
-				cout << "你的攻击造成了" << hurt1 + hurt2 << "点伤害！" << endl;
-			
-				if ((int)this->character->getNegative_state_rate() == 1)//判断是否有冰冻眩晕状态，如果有的话回合数加一，即跳过怪物的那个回合
-					round++;
-				if (blooding)
-					enemyslife -= 10;//判断是否有持续出血状态，持续出血每一回合怪物血量减10
+			catch (Error &e) {
+				// 读到非法字符后，输入流将处于出错状态，
+				// 为了继续获取输入，首先要调用 clear 函数
+				cin.clear();
+				// numeric_limits<streamsize>::max() 返回输入缓冲的大小。
+				// ignore 函数在此将把输入流中的数据清空。
+				cin.ignore((numeric_limits<streamsize>::max)(), '\n');
+				cout << e.what() << endl;
+				system("pause");
+
+				system("cls");
 			}
-			round++;//回合数加一
+
 		}
 	} while ((mylife > 0) && enemyslife >0);//人物和怪物的血量都大于0的情况下，一直战斗
 	if (mylife > 0) {//如果战斗结束后人物血量大于0，就是人物胜利
@@ -88,7 +122,7 @@ void fighting::fight(task* point, int task)
 		{
 			cout << "恭喜你获得了" << fallArticle << endl;//经验升级我没写
 			character->getBag()->AddWeapon(fallArticle);
-			
+
 		}
 		character->setExperience(character->getExperience() + 20);
 	}

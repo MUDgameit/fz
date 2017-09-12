@@ -39,7 +39,7 @@ int main()
 	{
 		//新的游戏
 		if (startMenuChoice == 1)
-		{	
+		{
 			//生成背包
 			myBag = Bag();
 			//生成技能
@@ -49,9 +49,10 @@ int main()
 			//生成人物
 			amy = Character(operating_user.getGamerName(),&mySkill,&myBag);
 			//故事
+
 			myTask.finishNowTask(operating_user.showStory(amy));
 			system("cls");
-			
+
 		}
 		//读取存档
 		else
@@ -60,78 +61,86 @@ int main()
 			file.open("name.txt");
 			string name;
 			string weaponname;
-			int i;
-			while (file.good())
+			while (!file.eof())
 			{
 				file >> name;
 			}
-			file.close;
-			amy = Character(name, &mySkill, &myBag);
-			ifstream file4;
-			double i;
-			string wearing;
-			file.open("character.txt");
-			while (file.good())
-			{
-				file >> i;
-				amy.setAttackSpeed(i);
-				file >> i;
-				amy.setAvoidRate(i);
-				file >> wearing;
-				amy.setChest(new Equipment(wearing));
-				file >> i;
-				amy.setDefense(i);
-				file >> i;
-				amy.setExperience(i);
-				file >> i;
-				amy.setForceRate(i);
-				file >> i;
-				amy.setHitRate(i);
-				file >> i;
-				amy.setInterForce(i);
-				file >> wearing;
-				amy.setLeg(new Equipment(wearing));
-				file >> i;
-				amy.setLevel(i);
-				file >> i;
-				amy.setLife(i);
-				file >> i;
-				amy.setNegative_state_rate(i);
-				file >> wearing;
-				amy.setShoulder(new Equipment(wearing));
-				file >> i;
-				amy.setStrength(i);
-				file >> wearing;
-				amy.setWeapon(new Weapon(wearing));
+//			file.close;
 
-			}
-			Bag myBag = Bag();
 			ifstream file1;
 			file1.open("bag.txt");
-			while (file1.good()) {
+			while (!file1.eof()) {
 				file1 >> weaponname;
 				myBag.AddWeapon(weaponname);
 			}
 			//生成技能
-			Skill mySkill = Skill();
+			/*Skill mySkill = Skill();*/
 			int SkillNumber;
 			ifstream file2;
 			file2.open("SkillName.txt");
-			while (file2.good()) {
+			while (!file2.eof()) {
 				file2 >> SkillNumber;
 				mySkill.setSkillLearned(SkillNumber);
 			}
 			//生成任务
-			task myTask = task();
-			int taskNumber, i = 0;
+			/*task myTask = task();*/
+			int taskNumber, k = 0;
 			ifstream file3;
-			file3.open("Task.txt");
-			while (file3.good()) {
+			file3.open("task1.txt");
+			while (!file3.eof()) {
 				file3 >> taskNumber;
 				myTask.setfinishTask(taskNumber);
-				i++;
+				k++;
 			}
-			myTask.setNowTask(i);
+			myTask.setNowTask(k);
+
+
+
+			amy = Character(name, &mySkill, &myBag);
+			ifstream file4;
+			double i;
+			string wearing;
+			file4.open("character.txt");
+			while (!file4.eof())
+			{
+				file4 >> i;
+				amy.setAttackSpeed(i);
+				file4 >> i;
+				amy.setAvoidRate(i);
+				file4 >> wearing;
+				if (wearing != "无")
+					myBag.equipEquipment(wearing, amy);
+				file4 >> i;
+				amy.setDefense(i);
+				file4 >> i;
+				amy.setExperience(i);
+				file4 >> i;
+				amy.setForceRate(i);
+				file4 >> i;
+				amy.setHitRate(i);
+				file4 >> i;
+				amy.setInterForce(i);
+				file4 >> wearing;
+				if (wearing != "无")
+					myBag.equipEquipment(wearing,amy);
+				file4 >> i;
+				amy.setLevel(i);
+				file4 >> i;
+				amy.setLife(i);
+				file4 >> i;
+				amy.setNegative_state_rate(i);
+				file4 >> wearing;
+				if (wearing != "无")
+					myBag.equipEquipment(wearing, amy);
+				file4 >> i;
+				amy.setStrength(i);
+				file4 >> wearing;
+				if (wearing != "无")
+					myBag.equipEquipment(wearing, amy);
+
+			}
+			/*Bag myBag = Bag();*/
+		
 		}
 		int mainMenuChoice = 0;
 		while (mainMenuChoice = operating_user.showMainMenu(amy))
@@ -192,13 +201,14 @@ int main()
 			}
 			mainMenuChoice = 0;
 		}
+		save gameSave = save(&amy, &myBag, &mySkill, &myTask);
 		return 0;
 	}
 	else
-	{
+	{   //save save1(&amy,&myBag,&mySkill,&myTask);
 		return 0;
 	}
 
-	
+
 	return 0;
 }

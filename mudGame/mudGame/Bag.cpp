@@ -28,7 +28,7 @@ void Bag::ShowWeapon(Character& gamer) {
 		consolehwnd = GetStdHandle(STD_OUTPUT_HANDLE);
 		SetConsoleTextAttribute(consolehwnd, 12);
 		cout << "背包里没有物品！" << endl;
-		SetConsoleTextAttribute(consolehwnd, 9);
+		SetConsoleTextAttribute(consolehwnd, 14);
 		system("pause");
 		system("cls");
 		
@@ -45,7 +45,6 @@ void Bag::ShowWeapon(Character& gamer) {
 			for (i = 0; i < 5 && it != bagContent.end(); it++)
 			{
 				cout << ++number << "：" << (*it)->getName() << "\t";
-				DetialNumber++;
 			}
 			cout << endl;
 		}
@@ -154,9 +153,32 @@ void Bag::ShowWeapon(Character& gamer) {
 		this->ShowWeapon(operating_user, gamer);*/
 	}
 }
+string Bag::nameOfEquipment(int i)
+{
+	return bagContent[i]->getName();
+}
+void Bag::equipEquipment(string name, Character& gamer)
+{
+	for (int i = 0; i < bagContent.size(); i++)
+	{
+		int equipType;
+		if (bagContent[i]->getName() == name)
+		{
+			bagContent[i]->setEquipment(true);
+			equipType = bagContent[i]->getCategory();
+			switch (equipType)
+			{
+			case 1:gamer.setShoulder(reinterpret_cast<Equipment*>(bagContent[i])); break;
+			case 2:gamer.setChest(reinterpret_cast<Equipment*>(bagContent[i])); break;
+			case 3:gamer.setLeg(reinterpret_cast<Equipment*>(bagContent[i])); break;
+			case 4:gamer.setWeapon(reinterpret_cast<Weapon*>(bagContent[i])); break;
+			}
+		}
+	}
+}
 Bag::Bag() {
-	DetialNumber = 0;
+	
 }
 int Bag::getNum() {
-	return DetialNumber;
+	return bagContent.size();
 }
