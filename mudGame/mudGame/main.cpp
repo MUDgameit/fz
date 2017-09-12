@@ -20,10 +20,14 @@
 #include "weapon.h"
 #include "WuDang.h"
 #include "save.h"
+#include "mmsystem.h"//导入声音头文件
+#pragma comment(lib,"winmm.lib")//导入声音头文件库  
 using namespace std;
 
 int main()
 {
+	//system("..\a.MP3");
+	PlaySound(TEXT("..\a.MP3"), NULL, SND_FILENAME | SND_ASYNC);
 	operating operating_user;
 	//返回值为零则退出游戏
 	int startMenuChoice = operating_user.showStartMenu();
