@@ -1,0 +1,16 @@
+﻿  monster.cpp
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\monster.cpp(33): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\monster.cpp(34): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\monster.cpp(35): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\monster.cpp(37): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\monster.cpp(38): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\monster.cpp(24): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: 参见“strcpy”的声明
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\monster.cpp(25): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 参见“strtok”的声明
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\monster.cpp(27): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: 参见“strtok”的声明
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\monster.cpp(46): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+c:\users\dell\documents\visual studio 2015\projects\mudgame\mudgame\monster.cpp(53): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  mudGame.vcxproj -> C:\Users\dell\Documents\Visual Studio 2015\Projects\mudGame\Debug\mudGame.exe
+  mudGame.vcxproj -> C:\Users\dell\Documents\Visual Studio 2015\Projects\mudGame\Debug\mudGame.pdb (Full PDB)
